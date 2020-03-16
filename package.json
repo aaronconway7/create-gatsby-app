@@ -1,0 +1,62 @@
+{
+    "name": "gatsby-site",
+    "private": false,
+    "description": "My Starter Template for a Gatsby based site",
+    "version": "1.0.0",
+    "author": "Aaron Conway <hello@aaronconway.co.uk>",
+    "dependencies": {
+        "babel-plugin-styled-components": "^1.10.7",
+        "gatsby": "^2.19.43",
+        "gatsby-image": "^2.2.43",
+        "gatsby-plugin-canonical-urls": "^2.1.22",
+        "gatsby-plugin-google-analytics": "^2.1.38",
+        "gatsby-plugin-manifest": "^2.2.47",
+        "gatsby-plugin-offline": "^3.0.40",
+        "gatsby-plugin-postcss": "^2.1.22",
+        "gatsby-plugin-react-helmet": "^3.1.23",
+        "gatsby-plugin-sass": "^2.1.31",
+        "gatsby-plugin-sharp": "^2.4.12",
+        "gatsby-plugin-styled-components": "^3.1.21",
+        "gatsby-source-filesystem": "^2.1.55",
+        "gatsby-transformer-sharp": "^2.3.18",
+        "node-sass": "^4.13.1",
+        "prop-types": "^15.7.2",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-helmet": "^5.2.1",
+        "react-icons": "^3.9.0",
+        "styled-components": "^5.0.1"
+    },
+    "devDependencies": {
+        "husky": "^4.2.3",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "tailwindcss": "^1.2.0",
+        "twin.macro": "^1.0.0-alpha.7"
+    },
+    "keywords": [
+        "gatsby"
+    ],
+    "license": "MIT",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/aaronconway7/gatsby-site"
+    },
+    "bugs": {
+        "url": "https://github.com/aaronconway7/gatsby-site/issues"
+    }
+}
