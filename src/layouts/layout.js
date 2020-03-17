@@ -6,17 +6,25 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'
 
-import Header from './header'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 // All versions
 const GlobalStyle = createGlobalStyle`
     body {
-        ${tw`bg-gray-100 text-gray-900`};
+        ${tw`text-gray-900 min-h-screen`};
+    }
+
+    main {
+        ${tw`max-w-screen-md m-auto p-32`};
+    }
+
+    a {
+        ${tw`border py-2 px-4 inline-block rounded bg-gray-500 hover:bg-gray-400`};
     }
 `
 
@@ -35,26 +43,10 @@ const Layout = ({ children }) => {
         <>
             <GlobalStyle />
             <Header siteTitle={data.site.siteMetadata.title} />
-            <div
-                style={{
-                    margin: `0 auto`,
-                    maxWidth: 960,
-                    padding: `0 1.0875rem 1.45rem`,
-                }}
-            >
-                <main>{children}</main>
-                <footer>
-                    © {new Date().getFullYear()}, Built with
-                    {` `}
-                    <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </footer>
-            </div>
+            <main>{children}</main>
+            <Footer />
         </>
     )
-}
-
-Layout.propTypes = {
-    children: PropTypes.node.isRequired,
 }
 
 export default Layout
