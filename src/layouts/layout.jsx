@@ -11,7 +11,7 @@ import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'
 
 import Header from '../components/header'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 
 // All versions
 const GlobalStyle = createGlobalStyle`
