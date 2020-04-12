@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const StyledFooter = styled.footer`
-    ${tw`bg-gray-100 p-4 border-t`};
+    /* ${tw`bg-gray-100 p-4 border-t`}; */
 `
 
 const Footer = () => (

@@ -5,3 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+
+import App from './app'
+
+export const wrapRootElement = App
