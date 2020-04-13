@@ -1,5 +1,5 @@
 {
-    "name": "create-gatsby-app",
+    "name": "@aaronconway7/create-gatsby-app",
     "private": false,
     "description": "My Starter Template for a Gatsby based app",
     "version": "1.0.0",
@@ -56,9 +56,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/aaronconway7/gatsby-app"
+        "url": "https://github.com/aaronconway7/create-gatsby-app"
     },
     "bugs": {
-        "url": "https://github.com/aaronconway7/gatsby-app/issues"
+        "url": "https://github.com/aaronconway7/create-gatsby-app/issues"
     }
 }
