@@ -6,7 +6,7 @@ import { DarkModeContext } from '../store/darkMode'
 import Emoji from '../components/Emoji'
 
 const Toggle = styled.button`
-    ${tw`border-2 border-white rounded-full flex cursor-pointer w-20 px-2 justify-between items-center text-white overflow-hidden absolute right-0 top-0 mr-2 mt-2`}
+    ${tw`border-2 border-white rounded-full flex cursor-pointer w-20 px-2 justify-between items-center text-white overflow-hidden`}
     background: ${({ theme }) =>
         theme.darkMode
             ? `linear-gradient(#091236, #1E215D)`
@@ -28,14 +28,10 @@ const Toggle = styled.button`
 `
 
 const ThemeToggle = () => {
-    const { setDarkMode } = useContext(DarkModeContext)
-
-    const toggleTheme = () => {
-        setDarkMode(prevState => !prevState)
-    }
+    const { toggleDarkMode } = useContext(DarkModeContext)
 
     return (
-        <Toggle onClick={toggleTheme}>
+        <Toggle onClick={toggleDarkMode}>
             <span className={`icon light`}>
                 <Emoji emoji={`🌞`} label={`Sun`} />
             </span>

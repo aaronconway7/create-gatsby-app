@@ -7,24 +7,13 @@
 
 import React from 'react'
 import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useSiteMetadata } from '../hooks/use-site-metadata'
 
-function SEO({ description = ``, lang = `en`, meta = [], title }) {
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author
-                    }
-                }
-            }
-        `
-    )
+function SEO({ description = ``, lang = `en`, meta = [], title, socialImage }) {
+    const metadata = useSiteMetadata()
 
-    const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || metadata.description
+    const metaSocialImage = socialImage || metadata.socialImage
 
     return (
         <Helmet
@@ -32,7 +21,7 @@ function SEO({ description = ``, lang = `en`, meta = [], title }) {
                 lang,
             }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s | ${metadata.title}`}
             meta={[
                 {
                     name: `description`,
@@ -51,12 +40,16 @@ function SEO({ description = ``, lang = `en`, meta = [], title }) {
                     content: `website`,
                 },
                 {
+                    property: `og:image`,
+                    content: metaSocialImage,
+                },
+                {
                     name: `twitter:card`,
                     content: `summary`,
                 },
                 {
                     name: `twitter:creator`,
-                    content: site.siteMetadata.author,
+                    content: metadata.twitter,
                 },
                 {
                     name: `twitter:title`,

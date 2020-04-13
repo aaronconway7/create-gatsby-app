@@ -2,9 +2,8 @@ import React, { useContext } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import tw from 'twin.macro'
 
-import '../css/tailwind.css'
 import { DarkModeContext } from '../store/darkMode'
-import ThemeToggle from '../components/ThemeToggle'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const GlobalStyle = createGlobalStyle`
@@ -28,14 +27,22 @@ const GlobalStyle = createGlobalStyle`
     a {
         ${tw`opacity-50 transition duration-300 ease-in-out hover:opacity-75 hover:underline`}
     }
+
+    button {
+        ${tw`outline-none!`}
+    }
 `
 
 const StyledBody = styled.div`
     ${tw`min-h-screen grid`}
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+
+    main {
+        ${tw`text-center w-10/12 max-w-3xl mx-auto py-24`}
+    }
 
     footer {
-        ${tw`row-start-2 row-end-3`}
+        ${tw`row-start-3 row-end-4`}
     }
 `
 
@@ -46,7 +53,7 @@ const Layout = ({ children }) => {
         <ThemeProvider theme={{ darkMode }}>
             <GlobalStyle />
             <StyledBody>
-                <ThemeToggle />
+                <Header />
                 <main>{children}</main>
                 <Footer />
             </StyledBody>

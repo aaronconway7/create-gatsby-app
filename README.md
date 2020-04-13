@@ -5,10 +5,25 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby App Starter by Aaron
+  Gatsby App Starter (by Aaron)
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+![Leo](src/assets/img/leo.jpg)
+
+> Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+
+_(But customised according to Aaron)_
+
+It comes set up ready to use with
+
+-   Styled Components
+-   Tailwindcss
+-   React Context
+-   Dark Mode
+-   Google Analytics
+-   SEO
+
+and probably more than I just haven't been bothered to update here
 
 ## 🚀 Quick start
 

@@ -1,9 +1,18 @@
+const siteMetadata = {
+    title: `Gatsby App`,
+    shortName: `gatsby`,
+    description: `My Starter Template for a Gatsby based app.`,
+    author: `Aaron`,
+    twitter: `@aaronconway7`,
+    siteUrl: `https://example.com/`,
+    backgroundColor: `#663399`,
+    themeColor: `#663399`,
+    favicon: `src/assets/img/favicon.png`,
+    socialImage: `src/assets/img/leo.jpg`,
+}
+
 module.exports = {
-    siteMetadata: {
-        title: `Gatsby Site`,
-        description: `My Starter Template for a Gatsby based site.`,
-        author: `@aaronconway7`,
-    },
+    siteMetadata,
     plugins: [
         `gatsby-plugin-react-helmet`,
         {
@@ -18,13 +27,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-site`,
-                short_name: `gatsby`,
+                name: siteMetadata.title.replace(/\s+/g, '-').toLowerCase(),
+                short_name: siteMetadata.shortName,
                 start_url: `/`,
-                background_color: `#663399`,
-                theme_color: `#663399`,
+                background_color: siteMetadata.backgroundColor,
+                theme_color: siteMetadata.themeColor,
                 display: `minimal-ui`,
-                icon: `src/assets/img/favicon.png`, // This path is relative to the root of the site.
+                icon: siteMetadata.favicon, // This path is relative to the root of the site.
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -47,7 +56,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-canonical-urls`,
             options: {
-                siteUrl: `https://www.example.com`,
+                siteUrl: siteMetadata.siteUrl,
             },
         },
         {
@@ -70,6 +79,6 @@ module.exports = {
                 purgeOnly: [`/tailwind.css`], // Purge only these files/folders
             },
         },
-        `gatsby-plugin-mdx`,
+        `gatsby-plugin-robots-txt`,
     ],
 }
